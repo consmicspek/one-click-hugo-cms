@@ -1,1 +1,49 @@
+{{ define "main" }}
+
+<div class="ph3 bg-off-white">
+  <div class="center mw6 pv3">
+    <img src="{{ .Params.logo }}" alt="" class="db w4 center pv4">
+
+    {{ .Content }}
+
+    <!-- Contact Form Section -->
+    <div class="mb4">
+      <h4 class="f3 b lh-title mb3 tc">Drop us a line below</h4>
+
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="dn">
+          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+        </p>
+
+        <div class="flex-l mhn1-l">
+          <div class="ph1-l w-50-l">
+            <fieldset>
+              <input type="text" id="name" name="name" placeholder="Name" class="w-100 mb2" required>
+              <label for="name">Name</label>
+            </fieldset>
+          </div>
+
+          <div class="ph1-l w-50-l">
+            <fieldset>
+              <input type="email" id="email" name="email" placeholder="Email" class="w-100 mb2" required>
+              <label for="email">Email</label>
+            </fieldset>
+          </div>
+        </div>
+
+        <fieldset>
+          <textarea id="message" name="message" placeholder="Your message" rows="6" class="w-100 mb2" required></textarea>
+          <label for="message">Your message</label>
+        </fieldset>
+
+        <div class="tc">
+          <button type="submit" class="btn w-100 w-auto-ns raise">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{{ end }}
 
